@@ -1,0 +1,30 @@
+{
+  "name": "piperize",
+  "version": "0.0.1",
+  "description": "Functional utility to create a pipeline of pure functions",
+  "main": "index.js",
+  "repository": "https://github.com/buzzin0609/piperize.git",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "buzzin0609 <will0609@hotmail.com>",
+  "license": "ISC",
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": ["<rootDir>/src/**/*.spec.(js|ts)?(x)"]
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.8.6",
+    "jest": "^22.4.2",
+    "sinon": "^4.4.6",
+    "ts-jest": "^22.4.1",
+    "typescript": "^2.7.2"
+  }
+}
