@@ -10,7 +10,7 @@ Yarn: `yarn add piperize`
 
 Import piperize as and when you need with ES Modules: <br />
 
-`import { piperize } from 'piperize';`
+`import piperize from 'piperize';`
 
 ## Usage
 
@@ -33,7 +33,7 @@ Here is a simple full example:
 
 ```javascript
 
-import { piperize } from 'piperize';
+import piperize from 'piperize';
 
 const double = num => num * 2;
 const minusTwo = num => num - 2;

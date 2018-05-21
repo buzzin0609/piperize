@@ -1,5 +1,2 @@
 import piperize from "./src/piperize";
-
-export default {
-    piperize
-};
+export default piperize;

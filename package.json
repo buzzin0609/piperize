@@ -1,6 +1,6 @@
 {
   "name": "piperize",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Functional utility to create a pipeline of pure functions",
   "main": "index.js",
   "repository": "https://github.com/buzzin0609/piperize.git",
@@ -18,7 +18,9 @@
     "transform": {
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": ["<rootDir>/src/**/*.spec.(js|ts)?(x)"]
+    "testMatch": [
+      "<rootDir>/src/**/*.spec.(js|ts)?(x)"
+    ]
   },
   "devDependencies": {
     "@types/jasmine": "^2.8.6",
