@@ -2,7 +2,8 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es3",
-    "sourceMap": true
+    "sourceMap": true,
+    "lib": ["ES2015"]
   },
   "types": ["jasmine"],
   "exclude": [

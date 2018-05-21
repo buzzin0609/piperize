@@ -46,3 +46,26 @@ const value = pipeline(10);
 console.log(`Value = ${value}`);
 //output: Value = 18
 ```
+
+## Async workflow?
+
+Piperize has you covered with `pipeAsync()`
+
+You can reliably pipe async or non-async functions with the pipeAsync utility function:
+
+```javascript
+
+import { pipeAsync } from 'piperize';
+//async function here
+const double = async num => num * 2;
+//non async function
+const minus2 = num => num - 2;
+
+const value = await pipeAsync(
+	double,
+	minus2
+)(10);
+
+console.log(value); //18
+
+```
