@@ -27,7 +27,7 @@ const pipeline = piperize(
 ```
 This will return a function to be called at your leisure:
 
-`const finalValue = pipline(10);`
+`const finalValue = pipeline(10);`
 
 Here is a simple full example:
 
