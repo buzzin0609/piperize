@@ -1,0 +1,1 @@
+{"version":3,"file":"ifFalsy.js","sourceRoot":"","sources":["ifFalsy.ts"],"names":[],"mappings":";;AAAA;;;GAGG;AACH,iBAAgC,EAAY;IAExC,OAAO,yBAAyB,KAAU;QAEtC,IAAI,CAAC,KAAK,EAAE;YACR,OAAO,EAAE,CAAC,KAAK,CAAC,CAAC;SACpB;QAED,OAAO,KAAK,CAAC;IAGjB,CAAC,CAAA;AACL,CAAC;AAZD,6BAYC"}

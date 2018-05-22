@@ -69,3 +69,74 @@ const value = await pipeAsync(
 console.log(value); //18
 
 ```
+
+## Utility middleware
+
+Piperize comes with some useful utilties to help you in your functional programming work flow:
+
+- ifFalsy - great for piping in error handling or pipeline rescuing
+```javascript
+
+import piperize, { ifFalsy } from 'piperize';
+
+function willReturnFalsy(value) {
+	return '';
+}
+
+function handleFalsy(value) {
+	console.log(`piped value was falsy, oops. Here it is ${value}`);
+	
+	return 'this did though';
+}
+
+const value = piperize(
+	willReturnFalsy,
+	ifFalsy(handleFalsy)
+)('wont get through');
+
+console.log(value); //this did though
+```
+
+- ifTruthy - to save you null checking
+```javascript
+import piperize, { ifTruthy } from 'piperize';
+
+function willReturnTruthy(value) {
+	return value + ' is soooo truthy';
+}
+
+function handleTruthy(value) {
+	return value + ' and you know it';
+}
+
+const value = piperize(
+	willReturnTruthy,
+	ifTruthy(handleTruthy)
+)('this value');
+
+console.log(value); //this value is soooo truthy and you know it
+```
+
+- log - for logging values at any stage in the pipeline
+
+```javascript
+import piperize, { log } from 'piperize';
+
+
+const double = num => num * 2;
+const minus2 = num => num - 2;
+const buildMessage = num => `Num is ${num}`;
+
+piperize(
+    double,
+    log,
+    minus2,
+    buildMessage,
+    log
+)(10);
+
+//logs: 
+//piperize(): Current pipe value: 20
+//piperize(): Current pipe value: Num is 18
+
+```

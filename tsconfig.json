@@ -3,7 +3,7 @@
     "module": "commonjs",
     "target": "es3",
     "sourceMap": true,
-    "lib": ["ES2015"]
+    "lib": ["ES2015", "dom"]
   },
   "types": ["jasmine"],
   "exclude": [
