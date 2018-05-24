@@ -28,5 +28,11 @@
     "sinon": "^4.4.6",
     "ts-jest": "^22.4.1",
     "typescript": "^2.7.2"
-  }
+  },
+  "keywords": [
+    "functional programming",
+    "pipeline",
+    "pipeline pattern",
+    "fp"
+  ]
 }
