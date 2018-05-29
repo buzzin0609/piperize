@@ -137,5 +137,37 @@ describe('pipeAsync:', function () {
             });
         });
     });
+    it('should properly bind the this context when used on the callback function', function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var context, result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        context = {
+                            value: 2,
+                            test: function (num) {
+                                return __awaiter(this, void 0, void 0, function () {
+                                    return __generator(this, function (_a) {
+                                        return [2 /*return*/, this.value + num];
+                                    });
+                                });
+                            },
+                            test2: function (num) {
+                                return __awaiter(this, void 0, void 0, function () {
+                                    return __generator(this, function (_a) {
+                                        return [2 /*return*/, num + this.value];
+                                    });
+                                });
+                            }
+                        };
+                        return [4 /*yield*/, pipeAsync_1["default"](context.test, context.test2).call(context, 2)];
+                    case 1:
+                        result = _a.sent();
+                        expect(result).toEqual(6);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    });
 });
 //# sourceMappingURL=pipeAsync.spec.js.map

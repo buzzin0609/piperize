@@ -63,4 +63,22 @@ describe('pipeAsync:', function () {
 
         expect(err).toBeTruthy();
     });
+
+    it('should properly bind the this context when used on the callback function', async function() {
+        const context = {
+            value: 2,
+            test: async function(num) {
+                return this.value + num;
+            },
+            test2: async function(num) {
+                return num + this.value;
+            }
+        };
+        const result = await pipeAsync(
+            context.test,
+            context.test2
+        ).call(context, 2);
+
+        expect(result).toEqual(6);
+    });
 });

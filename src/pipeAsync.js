@@ -35,11 +35,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
+var onlyPure_1 = require("./onlyPure");
 /**
  * Pipes a list of callbacks asynchronously. The list can be a mix of async and regular callbacks
  * @param callbacks
  */
-var onlyPure_1 = require("./onlyPure");
 function pipeAsync() {
     var callbacks = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -51,13 +51,13 @@ function pipeAsync() {
             inputs[_i] = arguments[_i];
         }
         return __awaiter(this, void 0, void 0, function () {
-            var first;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, callbacks[0].apply(callbacks, inputs)];
+            var first, _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, (_a = callbacks[0]).call.apply(_a, [this].concat(inputs))];
                     case 1:
-                        first = _a.sent();
-                        return [2 /*return*/, piperizeAsyncReducer(onlyPure_1["default"](first, callbacks[0]), callbacks.slice(1))];
+                        first = _b.sent();
+                        return [2 /*return*/, piperizeAsyncReducer.call(this, onlyPure_1["default"](first, callbacks[0]), callbacks.slice(1))];
                 }
             });
         });
@@ -71,10 +71,10 @@ function piperizeAsyncReducer(value, otherCallbacks) {
             switch (_a.label) {
                 case 0:
                     if (!otherCallbacks.length) return [3 /*break*/, 2];
-                    return [4 /*yield*/, otherCallbacks[0](value)];
+                    return [4 /*yield*/, otherCallbacks[0].call(this, value)];
                 case 1:
                     newValue = _a.sent();
-                    return [2 /*return*/, piperizeAsyncReducer(onlyPure_1["default"](newValue, otherCallbacks[0]), otherCallbacks.slice(1))];
+                    return [2 /*return*/, piperizeAsyncReducer.call(this, onlyPure_1["default"](newValue, otherCallbacks[0]), otherCallbacks.slice(1))];
                 case 2: return [2 /*return*/, value];
             }
         });
