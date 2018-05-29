@@ -5,5 +5,5 @@
 export default function ifTruthy(cb: Function):Function {
     return function ifTruthyResolver(value) {
         return value && cb(value) || false;
-    }
+    };
 }

@@ -1,6 +1,6 @@
 {
   "name": "piperize",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Functional utility to create a pipeline of pure functions",
   "main": "index.js",
   "repository": "https://github.com/buzzin0609/piperize.git",
