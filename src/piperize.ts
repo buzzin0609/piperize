@@ -16,7 +16,7 @@ export default function piperize(...callbacks: Function[]): any {
                     cb
                 );
             }, first(...inputs)
-        )
+        );
     };
 }
 

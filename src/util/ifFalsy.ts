@@ -11,7 +11,5 @@ export default function ifFalsy(cb: Function): Function {
         }
 
         return value;
-
-
     }
 }
