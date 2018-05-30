@@ -31,5 +31,10 @@ describe('ifError:', function () {
         var value = piperize_1["default"](catchError_1["default"](errorCb), ifError_1["default"](stub))(10);
         expect(value).toEqual(2);
     });
+    it('should pass the pipeline value through to the end if no error caught', function () {
+        var double = function (num) { return num * 2; };
+        var value = piperize_1["default"](catchError_1["default"](double), ifError_1["default"](stub))(10);
+        expect(value).toEqual(20);
+    });
 });
 //# sourceMappingURL=ifError.spec.js.map

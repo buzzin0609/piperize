@@ -46,4 +46,14 @@ describe('ifError:', function () {
 
         expect(value).toEqual(2);
     });
+
+    it('should pass the pipeline value through to the end if no error caught', function () {
+        const double = num => num * 2;
+        const value = piperize(
+            catchError(double),
+            ifError(stub)
+        )(10);
+
+        expect(value).toEqual(20);
+    });
 });

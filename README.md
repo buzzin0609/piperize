@@ -140,3 +140,27 @@ piperize(
 //piperize(): Current pipe value: Num is 18
 
 ```
+
+- catchError/catchErrorAsync & ifError - piperize does not catch errors by default. This is intended. This is the fix.
+
+```javascript
+
+import piperize, { catchError, ifError, log } from 'piperize';
+
+const willError = num => { throw new Error('error'); };
+const whenError = e => {
+	//handle the error
+	console.log(e);
+	return 10;
+};
+const afterError = num => `Num is ${num}`;
+
+piperize(
+	catchError(willError),
+	ifError(whenError),
+	afterError,
+	log
+)(20);
+
+// logs Num is 10
+```
