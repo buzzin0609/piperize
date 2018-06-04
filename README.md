@@ -164,3 +164,24 @@ piperize(
 
 // logs Num is 10
 ```
+
+- combine - combines the results of a series of pure functions into one object. Handy for consolidating lots of smaller functions or pipelines into a single object
+
+```javascript
+import { combine } from 'piperize';
+
+const doubled = num => ({
+    doubled: num * 2
+});
+const tripled = num => ({
+    tripled: num * 3
+})
+
+const args = combine(
+	doubled,
+	tripled
+)(2);
+
+console.log(args);
+// { doubled: 4, tripled: 6 }
+```
