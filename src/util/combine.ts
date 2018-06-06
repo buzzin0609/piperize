@@ -16,7 +16,7 @@ function combineReducerPipeline(...inputs) {
             callback,
             errorIfNotObject(callback),
             applyNewValue(acc)
-        )(...inputs);
+        )(...[...inputs, acc]);
     }
 }
 

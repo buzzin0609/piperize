@@ -63,5 +63,26 @@ describe('combine:', function () {
         var expected = __assign({}, obj1, obj2);
         expect(result).toEqual(expected);
     });
+    it('should combine multiple combine calls into one object', function () {
+        var first = function (value) { return ({ foo: value }); };
+        var second = function (value) { return ({ bar: value }); };
+        var third = function (value) { return ({ fizz: value }); };
+        var forth = function (value) { return ({ baz: value }); };
+        var value = combine_1["default"](combine_1["default"](first, second), combine_1["default"](third, forth))('buzz');
+        expect(value).toEqual({
+            foo: 'buzz',
+            bar: 'buzz',
+            fizz: 'buzz',
+            baz: 'buzz'
+        });
+    });
+    it('should pass the accumulated value through to each function as the second parameter', function () {
+        var spy = sinon.stub().returns({ bar: 'fizz' });
+        var spy2 = sinon.stub().returns({ buzz: 'haz' });
+        var first = function (value) { return ({ foo: value }); };
+        var value = combine_1["default"](first, spy, spy2)('bar');
+        expect(spy.args[0][1]).toEqual({ foo: 'bar' });
+        expect(spy2.args[0][1]).toEqual({ foo: 'bar', bar: 'fizz' });
+    });
 });
 //# sourceMappingURL=combine.spec.js.map

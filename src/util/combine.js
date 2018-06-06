@@ -21,7 +21,7 @@ function combineReducerPipeline() {
         inputs[_i] = arguments[_i];
     }
     return function combineReducerPipelineResolver(acc, callback) {
-        return piperize_1["default"](callback, errorIfNotObject(callback), applyNewValue(acc)).apply(void 0, inputs);
+        return piperize_1["default"](callback, errorIfNotObject(callback), applyNewValue(acc)).apply(void 0, inputs.concat([acc]));
     };
 }
 function errorIfNotObject(callback) {

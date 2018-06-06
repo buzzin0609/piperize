@@ -76,4 +76,42 @@ describe('combine:', function () {
 
         expect(result).toEqual(expected);
     });
+
+    it('should combine multiple combine calls into one object', function () {
+        const first = value => ({ foo: value });
+        const second = value => ({ bar: value });
+        const third = value => ({ fizz: value });
+        const forth = value => ({ baz: value });
+        const value = combine(
+            combine(
+                first,
+                second
+            ),
+            combine(
+                third,
+                forth
+            )
+        )('buzz');
+
+        expect(value).toEqual({
+            foo: 'buzz',
+            bar: 'buzz',
+            fizz: 'buzz',
+            baz: 'buzz'
+        });
+    });
+
+    it('should pass the accumulated value through to each function as the second parameter', function () {
+        const spy = sinon.stub().returns({ bar: 'fizz' });
+        const spy2 = sinon.stub().returns({ buzz: 'haz' });
+        const first = value => ({ foo: value });
+        const value = combine(
+            first,
+            spy,
+            spy2
+        )('bar');
+
+        expect(spy.args[0][1]).toEqual({ foo: 'bar' });
+        expect(spy2.args[0][1]).toEqual({ foo: 'bar', bar: 'fizz' });
+    });
 });
