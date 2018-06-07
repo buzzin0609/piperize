@@ -185,3 +185,16 @@ const args = combine(
 console.log(args);
 // { doubled: 4, tripled: 6 }
 ```
+
+- ifElse - simple curry utility to resolve a value from a truthy or falsy value
+
+```javascript
+import { ifElse } from 'piperize';
+
+//first param is the true value and second is the false one
+const eitherOfThese = ifElse('foo', 'bar');
+
+console.log(eitherOfThese(true)); //foo
+console.log(eitherOfThese(false)) //bar
+
+```

@@ -1,6 +1,7 @@
 
 export {default as ifTruthy} from './src/util/ifTruthy';
 export {default as ifFalsy} from './src/util/ifFalsy';
+export {default as ifElse} from './src/util/ifElse';
 export {default as log} from './src/util/log';
 export {default as catchError} from './src/util/catchError';
 export {default as catchErrorAsync} from './src/util/catchErrorAsync';
