@@ -198,3 +198,17 @@ console.log(eitherOfThese(true)); //foo
 console.log(eitherOfThese(false)) //bar
 
 ```
+
+- firstTruthy - passes a value through a series of functions and returns the first truthy value encountered
+
+```javascript
+import { firstTruthy } from 'piperize';
+
+const first = () => false;
+const second = () => '';
+const third = () => null;
+const final = (num, multiplier) => num * multiplier * 2;
+const value = firstTruthy(first, second, third, final)(2, 2);
+
+expect(value).toEqual(8); // true
+```
