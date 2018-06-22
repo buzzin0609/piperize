@@ -9,4 +9,5 @@ export {default as ifError} from './src/util/ifError';
 export {default as combine} from './src/util/combine';
 export {default as firstTruthy} from './src/util/firstTruthy';
 export {default as pipeAsync} from './src/pipeAsync';
+export {default as pipe} from './src/piperize';
 export {default} from './src/piperize';

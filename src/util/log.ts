@@ -3,7 +3,7 @@
  * @param value
  */
 export default function log(value: any): any {
-    console.log(`piperize(): Current pipe value: ${value}`);
+    console.log(`piperize(): Current pipe value: `, value);
 
     return value;
 }

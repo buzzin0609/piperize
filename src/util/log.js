@@ -5,7 +5,7 @@ exports.__esModule = true;
  * @param value
  */
 function log(value) {
-    console.log("piperize(): Current pipe value: " + value);
+    console.log("piperize(): Current pipe value: ", value);
     return value;
 }
 exports["default"] = log;
