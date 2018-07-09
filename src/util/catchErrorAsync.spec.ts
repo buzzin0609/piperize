@@ -4,11 +4,12 @@
 
 import catchErrorAsync from './catchErrorAsync';
 import pipeAsync from "../pipeAsync";
-import {CatchErrorResult} from "./catchError";
 
 describe('catchErrorAsync:', function () {
 
-    const willError = async () => { throw new Error('async error'); };
+    const willError = async () => {
+        throw new Error('async error');
+    };
     const double = async num => num * 2;
 
     it('should resolve to have an error property if function errors', async function () {

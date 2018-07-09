@@ -1,1 +1,10 @@
-{"version":3,"file":"log.js","sourceRoot":"","sources":["log.ts"],"names":[],"mappings":";;AAAA;;;GAGG;AACH,aAA4B,KAAU;IAClC,OAAO,CAAC,GAAG,CAAC,kCAAkC,EAAE,KAAK,CAAC,CAAC;IAEvD,OAAO,KAAK,CAAC;AACjB,CAAC;AAJD,yBAIC"}
+{
+  "version": 3,
+  "file": "log.js",
+  "sourceRoot": "",
+  "sources": [
+    "log.ts"
+  ],
+  "names": [],
+  "mappings": ";;AAAA;;;GAGG;AACH,aAA4B,KAAU;IAClC,OAAO,CAAC,GAAG,CAAC,kCAAkC,EAAE,KAAK,CAAC,CAAC;IAEvD,OAAO,KAAK,CAAC;AACjB,CAAC;AAJD,yBAIC"
+}

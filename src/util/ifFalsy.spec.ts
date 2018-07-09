@@ -25,6 +25,7 @@ describe('ifFalsy(): ', function () {
     it('should not run the callback if value passed in is truthy', function () {
         testFalsy(1, false);
         testFalsy('test', false);
-        testFalsy(() => {}, false);
+        testFalsy(() => {
+        }, false);
     });
 });

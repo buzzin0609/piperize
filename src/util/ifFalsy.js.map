@@ -1,1 +1,10 @@
-{"version":3,"file":"ifFalsy.js","sourceRoot":"","sources":["ifFalsy.ts"],"names":[],"mappings":";;AAAA;;;GAGG;AACH,iBAAgC,EAAY;IAExC,OAAO,yBAAyB,KAAU;QAEtC,IAAI,CAAC,KAAK,EAAE;YACR,OAAO,EAAE,CAAC,KAAK,CAAC,CAAC;SACpB;QAED,OAAO,KAAK,CAAC;IACjB,CAAC,CAAA;AACL,CAAC;AAVD,6BAUC"}
+{
+  "version": 3,
+  "file": "ifFalsy.js",
+  "sourceRoot": "",
+  "sources": [
+    "ifFalsy.ts"
+  ],
+  "names": [],
+  "mappings": ";;AAAA;;;GAGG;AACH,iBAAgC,EAAY;IAExC,OAAO,yBAAyB,KAAU;QAEtC,IAAI,CAAC,KAAK,EAAE;YACR,OAAO,EAAE,CAAC,KAAK,CAAC,CAAC;SACpB;QAED,OAAO,KAAK,CAAC;IACjB,CAAC,CAAA;AACL,CAAC;AAVD,6BAUC"
+}

@@ -11,8 +11,8 @@ describe('combine:', function () {
     let stub2;
 
     beforeEach(function () {
-        stub1 = sinon.stub().returns({ foo: 'bar' });
-        stub2 = sinon.stub().returns({ bar: 'foo' });
+        stub1 = sinon.stub().returns({foo: 'bar'});
+        stub2 = sinon.stub().returns({bar: 'foo'});
     });
 
     it('should call each callback', function () {
@@ -40,7 +40,7 @@ describe('combine:', function () {
 
     it('should finally resolve to an object that combines the return values of the other callbacks', function () {
         const result = combine(stub1, stub2)(3);
-        const expected = { foo: 'bar', bar: 'foo' };
+        const expected = {foo: 'bar', bar: 'foo'};
 
         expect(result).toEqual(expected);
     });
@@ -78,10 +78,10 @@ describe('combine:', function () {
     });
 
     it('should combine multiple combine calls into one object', function () {
-        const first = value => ({ foo: value });
-        const second = value => ({ bar: value });
-        const third = value => ({ fizz: value });
-        const forth = value => ({ baz: value });
+        const first = value => ({foo: value});
+        const second = value => ({bar: value});
+        const third = value => ({fizz: value});
+        const forth = value => ({baz: value});
         const value = combine(
             combine(
                 first,
@@ -102,16 +102,16 @@ describe('combine:', function () {
     });
 
     it('should pass the accumulated value through to each function as the second parameter', function () {
-        const spy = sinon.stub().returns({ bar: 'fizz' });
-        const spy2 = sinon.stub().returns({ buzz: 'haz' });
-        const first = value => ({ foo: value });
+        const spy = sinon.stub().returns({bar: 'fizz'});
+        const spy2 = sinon.stub().returns({buzz: 'haz'});
+        const first = value => ({foo: value});
         const value = combine(
             first,
             spy,
             spy2
         )('bar');
 
-        expect(spy.args[0][1]).toEqual({ foo: 'bar' });
-        expect(spy2.args[0][1]).toEqual({ foo: 'bar', bar: 'fizz' });
+        expect(spy.args[0][1]).toEqual({foo: 'bar'});
+        expect(spy2.args[0][1]).toEqual({foo: 'bar', bar: 'fizz'});
     });
 });

@@ -11,7 +11,7 @@ export default function catchErrorAsync(callback): Function {
 
         try {
             ret.value = await callback(value);
-        } catch(asyncError) {
+        } catch (asyncError) {
             ret.error = asyncError;
         }
 
