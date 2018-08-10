@@ -1,12 +1,35 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "module": "commonjs",
-    "target": "es3",
-    "sourceMap": true,
-    "lib": ["ES2015", "dom"]
+    "lib": [
+      "es2015",
+      "es2017",
+      "es7",
+      "es6"
+    ],
+    "declaration": true,
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "sourceMap": true
   },
   "types": ["jasmine"],
+  "include": [
+    "index.ts",
+    "src/**/*.ts"
+  ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist",
+    "src/**/*.spec.ts"
   ]
 }

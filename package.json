@@ -1,8 +1,9 @@
 {
   "name": "piperize",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "description": "Functional utility to create a pipeline of pure functions",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/buzzin0609/piperize.git",
   "scripts": {
     "test": "jest"
